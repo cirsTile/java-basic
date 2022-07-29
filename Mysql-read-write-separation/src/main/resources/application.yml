@@ -1,0 +1,23 @@
+spring:
+  master:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://172.23.156.10:3307/mytest?useSSL=false&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: 123456
+
+  slave:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://172.23.156.10:3308/mytest?useSSL=false&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: 123456
+
+  mybatis:
+    type-aliases-package: com.example.mysqlreadwriteseparation.entity
+    mapper-locations: classpath:com/example/mysqlreadwriteseparation/mapper/*.xml
+
+logging:
+  level:
+    com.example.mysqlreadwriteseparation.mapper: debug
+
